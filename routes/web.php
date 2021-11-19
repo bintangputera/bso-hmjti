@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +19,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// Route::get('/dashboard', function () {
+    //     return view('dashboard');
+// });
+Route::middleware(['auth'])->group(function () {
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+    // Dashboard
+    Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
+
+    // Blog
+    Route::resource('blog', BlogController::class,);
+
+});
+// Route::get('/dashboard', function () {
+// })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

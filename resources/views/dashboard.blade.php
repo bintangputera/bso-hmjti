@@ -1,5 +1,6 @@
 @extends('layouts.template')
 @section('content')
+<div class="content">
     <div class="row">
         <div class="col-lg-4 col-md-6">
             <div class="card">
@@ -55,4 +56,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection

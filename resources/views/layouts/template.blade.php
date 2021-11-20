@@ -53,6 +53,7 @@
         </footer>
         <!-- /.site-footer -->
         {{-- modal --}}
+        @include('components.backend.modal')
     </div>
     <!-- /#right-panel -->
 

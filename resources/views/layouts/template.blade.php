@@ -22,6 +22,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
+    @stack('css')
 
 
 </head>
@@ -34,14 +35,7 @@
        @include('components.backend.topbar')
         <!-- /#header -->
         <!-- Content -->
-        <div class="content">
-            <!-- Animated -->
-            <div class="animated fadeIn">
-                <!-- Widgets  -->
-                @yield('content')
-            </div>
-            <!-- .animated -->
-        </div>
+        @yield('content')
         <!-- /.content -->
         <div class="clearfix"></div>
         <!-- Footer -->
@@ -58,6 +52,7 @@
             </div>
         </footer>
         <!-- /.site-footer -->
+        {{-- modal --}}
     </div>
     <!-- /#right-panel -->
 
@@ -67,6 +62,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
         <script src="{{ asset('backend/assets/js/main.js') }}"></script>
+        @stack('js')
 
         <!--Local Stuff-->
         <script>

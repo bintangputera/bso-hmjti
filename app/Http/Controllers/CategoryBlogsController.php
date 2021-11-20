@@ -17,7 +17,7 @@ class CategoryBlogsController extends Controller
     public function index()
     {
         $this->param['data'] = CategoryBlog::all();
-        return view('pages.category-blog.index',$this->param);
+        return view('pages.category-blog.index', $this->param);
     }
 
     /**
@@ -49,7 +49,7 @@ class CategoryBlogsController extends Controller
           $insertCategoryBlog = new CategoryBlog;
           $insertCategoryBlog->category_name = $request->ktblog;
           $insertCategoryBlog->save();
-          return redirect('category-blogs')->withStatus('Berhasil Menyimpan Data');
+          return redirect('administrator/category-blogs')->withStatus('Berhasil Menyimpan Data');
         } catch (Exception $e){
           return redirect()->back()->withError('Terdapat Kesalahan',$e);
         }catch(\Illuminate\Database\QueryException $e){
@@ -126,6 +126,6 @@ class CategoryBlogsController extends Controller
             return redirect()->back()->withError('Terdapat Kesalahan',$e);
           }catch(\Illuminate\Database\QueryException $e){
             return redirect()->back()->withError('Terdapat Kesalahan',$e);
-          }
+        }
     }
 }

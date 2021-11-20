@@ -31,67 +31,38 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{ route('blog.store') }}" method="post" class="form-vertical" enctype="multipart/form-data">
+                        <form action="" method="post" class="form-vertical" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
+                                <img src="{{ asset('img/blog/'.$data->images) }}">
+                            </div>
+                            <div class="form-group">
                                 <label for="hf-judulblog" class="form-control-label">Judul Blog</label>
-                                <input type="text" id="hf-judulblog" name="judulblog" placeholder="Masukkan Judul Blog..." class="form-control @error('judulblog') is-invalid @enderror" >
-                                @error('judulblog')
-                                <div class="invalid-feedback">
-                                    <small class="help-block form-text text-danger">{{$message}}</small>
-                                </div>
-                                @enderror
+                                <input type="text" id="hf-judulblog" name="judulblog" placeholder="Masukkan Judul Blog..." value="{{ $data['title'] }}" class="form-control" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="hf-authorblog" class=" form-control-label">Author</label>
-                                <input type="text" id="hf-authorblog" name="authorblog" placeholder="Masukkan Author..." class="form-control @error('authorblog') is-invalid @enderror" >
-                                @error('authorblog')
-                                <div class="invalid-feedback">
-                                    <small class="help-block form-text text-danger">{{$message}}</small>
-                                </div>
-                                @enderror
+                                <input type="text" id="hf-authorblog" name="authorblog" placeholder="Masukkan Author..." value="{{ $data['author'] }}" class="form-control" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="hf-ktblog" class=" form-control-label">Kategori Blog</label>
-                                <select class="form-control" name="ktblog" id="hf-ktblog">
-                                    @forelse ($data as $item)
+                                <select class="form-control" name="ktblog" id="hf-ktblog" disabled="true">
+                                    @forelse ($category as $item)
                                         <option value="{{ $item->id }}">{{ ucwords($item->category_name ) }}</option>
                                     @empty
                                     <p class="text-warning">Tidak ada data</p>
                                     @endforelse
                                 </select>
-                                @error('ktblog')
-                                <div class="invalid-feedback">
-                                    <small class="help-block form-text text-danger">{{$message}}</small>
-                                </div>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label for="hf-ktblog" class=" form-control-label">Thumbnail</label>
-                                <input type="file" id="hf-ktblog" name="thumbnailblog" class="form-control @error('thumbnailblog') is-invalid @enderror" required>
-                                @error('thumbnailblog')
-                                <div class="invalid-feedback">
-                                    <small class="help-block form-text text-danger">{{$message}}</small>
-                                </div>
-                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="hf-ktblog1" class=" form-control-label">Konten Blog</label>
-                                <textarea id="summernote" name="kontenblog" class="form-control @error('kontenblog') is-invalid @enderror"></textarea>
-                                @error('kontenblog')
-                                <div class="invalid-feedback">
-                                    <small class="help-block form-text text-danger">{{$message}}</small>
-                                </div>
-                                @enderror
+                                <textarea id="summernote" name="kontenblog" class="form-control" readonly disabled="true">{{$data->content}}</textarea>
                             </div>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary btn-sm">
-                            <i class="fa fa-dot-circle-o"></i> Submit
-                        </button>
-                        <button type="reset" class="btn btn-danger btn-sm">
-                            <i class="fa fa-ban"></i> Reset
-                        </button>
+                        <a href="{{ route('blog.index') }}" class="btn btn-primary btn-sm">
+                            <i class="fa fa-dot-circle-o"></i> Kembali
+                        </a>
                     </form>
                     </div>
                 </div>
@@ -115,7 +86,7 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-    $('#summernote').summernote();
+    $('#summernote').summernote('disable');
     });
 </script>
 

@@ -48,11 +48,11 @@ class CategoryDivisiController extends Controller
             'desc' => 'Deskripsi'
         ]);
         try {
-          $updateCategoryDivisi = new CategoryDivisi;
-          $updateCategoryDivisi->divisi_name = $request->ktdivisi;
-          $updateCategoryDivisi->desc = $request->desc;
-          $updateCategoryDivisi->save();
-          return redirect('category-division')->withStatus('Berhasil Menyimpan Data');
+          $insertCategoryDivisi = new CategoryDivisi;
+          $insertCategoryDivisi->divisi_name = $request->ktdivisi;
+          $insertCategoryDivisi->desc = $request->desc;
+          $insertCategoryDivisi->save();
+          return redirect('category-blogs')->withStatus('Berhasil Menyimpan Data');
         } catch (Exception $e){
           return redirect()->back()->withError('Terdapat Kesalahan',$e);
         }catch(\Illuminate\Database\QueryException $e){

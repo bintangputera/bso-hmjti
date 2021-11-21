@@ -27,6 +27,7 @@
                 <div class="d-flex justify-content-center">
                     <img src=" {{ asset('frontend/assets/images/ketua-wakil.jpg') }}" class="img-fluid mx-auto" width="70%" alt="">
                 </div>
+
                 <div class="container">
                     <div class="row justify-content-md-center">
                     <div class="col col-lg-3">

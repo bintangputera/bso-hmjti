@@ -25,87 +25,6 @@
                 <div class="d-flex justify-content-center">
                     <img src=" {{ asset('frontend/assets/images/ketua-wakil.jpg') }}" class="img-fluid w-50 mx-auto" alt="">
                 </div>
-<<<<<<< Updated upstream
-
-              </div>
-
-              <!-- <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M3.5 15.75C3.5 8.98451 8.98451 3.5 15.75 3.5H29.75C30.7165 3.5 31.5 4.2835 31.5 5.25C31.5 6.2165 30.7165 7 29.75 7H15.75C10.9175 7 7 10.9175 7 15.75V29.75C7 30.7165 6.2165 31.5 5.25 31.5C4.2835 31.5 3.5 30.7165 3.5 29.75V15.75Z"
-                  fill="#0EC8F8" />
-                <path
-                  d="M10.5 17.5C10.5 13.634 13.634 10.5 17.5 10.5H31.5C35.366 10.5 38.5 13.634 38.5 17.5V31.5C38.5 35.366 35.366 38.5 31.5 38.5H17.5C13.634 38.5 10.5 35.366 10.5 31.5V17.5Z"
-                  fill="#0EC8F8" />
-              </svg> -->
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
-              aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
-              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link px-md-3 active" aria-current="page" href="#">Beranda</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link px-md-3" href="#">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link px-md-3" href="#">Profil BSO HMJTI</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link px-md-3" href="#">Struktur Kepengurusan</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </header>
-      <main>
-          <div class="banner-image">
-            <img src=" {{ asset('frontend/assets/images/pengurus-bso-2021.jpg') }}" class="img-fluid " alt="">
-          </div>
-          <div class="container-fluid banner ">
-            <div class="container text-center">
-              <h2>Selamat Datang </h2>
-              <h3>di Website BSO HMJTI POLIJE </h3>
-              <!-- <h3 class="fst-italic">
-                “Bersinergi dari Hati, Berdedikasi untuk TI !”
-              </h3> -->
-              <h3 class="fst-italic"> <span id="typed" class="typed"></span></h3>
-            </div>
-          </div>
-          <section class="container py-5 header__text h-100 w-100">
-              <h1 class="text-center">BSO HMJTI POLIJE</h1>
-              <div class="text-center py-2">
-                <p>BSO HMJTI adalah badan semi otonom yg berada di kampus bondowoso, bso sendiri adalah tangan kanan dari hmjti yg bertugas untuk mewadahi(kritik dan saran), kegiatan (kegiatan proker) mahasiswa jurusan teknologi informasi yg berada di kampus bondowoso</p>
-              </div>
-              <div class="row">
-                <div class="col-lg-8 mx-auto">
-                  <div class="card">
-                    <div class="card-body header__ketua">
-                      <div class="d-flex justify-content-center">
-                        <img src=" {{ asset('frontend/assets/images/ketua-wakil.jpg') }}" class="img-fluid w-50 mx-auto" alt="">
-                      </div>
-                      <div class="container">
-                        <div class="row justify-content-md-center">
-                          <div class="col col-lg-3">
-                            <div class="text-center">
-                              <h6 class="">Moch. Fahrony</h6>
-                              <p>Ketua BSO HMJTI</p>
-                              <small>Periode 2020-2021</small>
-                            </div>
-                          </div>
-                          <div class="col-md-auto">
-                          </div>
-                          <div class="col col-lg-3">
-                            <div class="text-center">
-                              <h6 class="">Vita Nada Agustin</h6>
-                              <p>Wakil BSO HMJTI</p>
-                              <small>Periode 2020-2021</small>
-                            </div>
-                          </div>
-=======
                 <div class="container">
                     <div class="row justify-content-md-center">
                     <div class="col col-lg-3">
@@ -113,7 +32,6 @@
                         <h6 class="">Moch. Fahrony</h6>
                         <p>Ketua BSO HMJTI</p>
                         <small>Periode 2020-2021</small>
->>>>>>> Stashed changes
                         </div>
                     </div>
                     <div class="col-md-auto">

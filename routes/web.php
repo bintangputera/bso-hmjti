@@ -8,11 +8,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Frontend\AboutController;
 use App\Http\Controllers\Frontend\BlogController as FrontendBlogController;
 use App\Http\Controllers\Frontend\HomeController;
-<<<<<<< Updated upstream
 use App\Http\Controllers\PeriodeController;
-=======
 use App\Http\Controllers\Frontend\StructureController;
->>>>>>> Stashed changes
 use App\Http\Controllers\StructureDivisiController;
 use Illuminate\Support\Facades\Route;
 use Nette\Schema\Elements\Structure;

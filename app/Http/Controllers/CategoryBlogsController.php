@@ -121,7 +121,7 @@ class CategoryBlogsController extends Controller
         try {
             $deleteCategoryBlog = CategoryBlog::findOrFail($id);
             $deleteCategoryBlog->delete();
-            return redirect('category-blogs')->withStatus('Berhasil Menghapus Data');
+            return redirect('administrator/category-blogs')->withStatus('Berhasil Menghapus Data');
           } catch (Exception $e){
             return redirect()->back()->withError('Terdapat Kesalahan',$e);
           }catch(\Illuminate\Database\QueryException $e){

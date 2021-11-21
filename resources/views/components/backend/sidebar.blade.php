@@ -9,6 +9,9 @@
                 <li class="{{ Request::segment(2) == 'content' ? 'active' : '' }}">
                     <a href="{{ route('content.index') }}"><i class="menu-icon ti-image"></i>Content</a>
                 </li>
+                <li class="{{ Request::segment(2) == 'periode' ? 'active' : '' }}">
+                    <a href="{{ route('periode.index') }}"><i class="menu-icon ti-time"></i>Periode</a>
+                </li>
                 <li class="{{ Request::segment(2) == 'blog' ? 'active' : '' }}">
                     <a href="{{ route('blog.index') }}"><i class="menu-icon fa ti-notepad"></i>Blogs </a>
                 </li>

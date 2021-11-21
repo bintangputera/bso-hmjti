@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryBlogsController;
 use App\Http\Controllers\CategoryDivisiController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\PeriodeController;
 use App\Http\Controllers\StructureDivisiController;
 use Illuminate\Support\Facades\Route;
 use Nette\Schema\Elements\Structure;
@@ -43,6 +44,8 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('structure-division', StructureDivisiController::class);
         // category divisi
         Route::resource('category-division', CategoryDivisiController::class);
+        // Periode
+        Route::resource('periode', PeriodeController::class);
     });
 
 });

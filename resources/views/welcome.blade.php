@@ -79,7 +79,7 @@
                   <div class="card">
                     <div class="card-body header__ketua">
                       <div class="d-flex justify-content-center">
-                        <img src=" {{ asset('assets/images/ketua-wakil.jpg') }}" class="img-fluid w-50 mx-auto" alt="">
+                        <img src=" {{ asset('frontend/assets/images/ketua-wakil.jpg') }}" class="img-fluid w-50 mx-auto" alt="">
                       </div>
                       <div class="container">
                         <div class="row justify-content-md-center">

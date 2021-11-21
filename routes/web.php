@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AspirasiController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryBlogsController;
@@ -54,6 +55,8 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('category-division', CategoryDivisiController::class);
         // Periode
         Route::resource('periode', PeriodeController::class);
+        // Aspirasi
+        Route::resource('aspirasi', AspirasiController::class);
     });
 
 });

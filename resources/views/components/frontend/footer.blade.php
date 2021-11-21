@@ -55,19 +55,19 @@
           <div class="col-lg-3 footer__text__contact" style="">
             <h6>Pages</h6>
             <ul>
-              <li><a href="">Beranda</a></li>
-              <li><a href="">Blog</a></li>
-              <li><a href="">Profil BSO HMJTI</a></li>
-              <li><a href="">Kepengurusan</a></li>
+              <li><a href="{{ route('home.front') }}">Beranda</a></li>
+              <li><a href="{{ route('blog.front') }}">Blog</a></li>
+              <li><a href="{{ route('profil.front') }}">Profil BSO HMJTI</a></li>
+              <li><a href="{{ route('structure.front') }}">Kepengurusan</a></li>
             </ul>
           </div>
           <div class="col-lg-3 footer__text__contact" style="">
             <h6>Link Terkait</h6>
             <ul>
-              <li><a href="">Politeknik Negeri Jember</a></li>
-              <li><a href="">Jurusan Teknologi Informasi</a></li>
-              <li><a href="">BEM KM Polije</a></li>
-              <li><a href="">HMJTI Polije</a></li>
+              <li><a href="https://polije.ac.id/" target="_blank">Politeknik Negeri Jember</a></li>
+              <li><a href="http://jti.polije.ac.id/" target="_blank">Jurusan Teknologi Informasi</a></li>
+              <li><a href="https://polije.ac.id/kemahasiswaan/" target="_blank">BEM KM Polije</a></li>
+              <li><a href="https://hmjti-polije.com/profile" target="_blank">HMJTI Polije</a></li>
             </ul>
           </div>
         </div>

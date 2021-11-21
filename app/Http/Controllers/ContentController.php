@@ -74,6 +74,7 @@ class ContentController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // return $request;
         $file = $request->file('banner');
 
         $request->validate(
@@ -82,7 +83,7 @@ class ContentController extends Controller
                 'misi' => 'required',
                 'motto' => 'required',
                 'desc' => 'required',
-                'banner' => 'mimes:png,jpg'
+                'banner' => 'mimes:png,jpg,jpeg'
             ],
             [
                 'required' => ':Attribute harus terisi'
@@ -113,7 +114,7 @@ class ContentController extends Controller
                 $file->move($path, $final_file_name);
                 $updateContent->banner = $final_file_name;
             }
-
+            // $updateContent->banner = old_banner;
             $updateContent->save();
             return redirect()->route('content.index')->withStatus('Berhasil menyimpan data');
         } catch (Exception $e) {

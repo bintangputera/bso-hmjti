@@ -33,10 +33,10 @@
             </ul>
             <h4 class="pt-4">Link Terkait</h4>
             <ul>
-                <li><a href="">Politeknik Negeri Jember</a></li>
-                <li><a href="">Jurusan Teknologi Informasi</a></li>
-                <li><a href="">BEM KM Polije</a></li>
-                <li><a href="">HMJTI Polije</a></li>
+                <li><a href="https://polije.ac.id/" target="_blank">Politeknik Negeri Jember</a></li>
+                <li><a href="http://jti.polije.ac.id/" target="_blank">Jurusan Teknologi Informasi</a></li>
+                <li><a href="https://polije.ac.id/kemahasiswaan/" target="_blank">BEM KM Polije</a></li>
+                <li><a href="https://hmjti-polije.com/profile" target="_blank">HMJTI Polije</a></li>
             </ul>
         </div>
     </div>

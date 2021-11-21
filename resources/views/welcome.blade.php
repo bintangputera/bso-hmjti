@@ -1,7 +1,7 @@
 @extends('layouts.template-front')
 @section('content')
     <div class="banner-image">
-        <img src=" {{ asset('frontend/assets/images/pengurus-bso-2021.jpg') }}" class="img-fluid " alt="">
+        <img src=" {{ asset('img/content/'.$data_banner->banner) }}" class="img-fluid " alt="">
     </div>
     <div class="container-fluid banner ">
         <div class="container text-center">
@@ -16,7 +16,9 @@
     <section class="container py-5 header__text h-100 w-100">
         <h1 class="text-center">BSO HMJTI POLIJE</h1>
         <div class="text-center py-2">
-            <p>BSO HMJTI adalah badan semi otonom yg berada di kampus bondowoso, bso sendiri adalah tangan kanan dari hmjti yg bertugas untuk mewadahi(kritik dan saran), kegiatan (kegiatan proker) mahasiswa jurusan teknologi informasi yg berada di kampus bondowoso</p>
+            <p>
+            {{ $data_banner->desc }}
+            </p>
         </div>
         <div class="row">
             <div class="col-lg-8 mx-auto">
@@ -54,26 +56,26 @@
         <div class="row">
         <div class="col-lg-7 col-md-12 p-4 d-flex mx-auto">
             <div class="card">
-            <div class="card-body">
-                <div class="row">
-                <div class="col-sm-3 p-3 text-center">
-                    <svg width="99" height="98" viewBox="0 0 99 98" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M49.2751 98C76.337 98 98.2751 76.062 98.2751 49C98.2751 21.938 76.337 0 49.2751 0C22.2131 0 0.275085 21.938 0.275085 49C0.275085 76.062 22.2131 98 49.2751 98Z" fill="url(#paint0_linear_9_243)"/>
-                    <path d="M68.7105 31.3059H30.3005C29.282 31.3063 28.3052 31.7111 27.585 32.4313C26.8648 33.1515 26.46 34.1283 26.4596 35.1469V63.3154C26.46 64.334 26.8648 65.3107 27.585 66.0309C28.3052 66.7512 29.282 67.156 30.3005 67.1563H68.7105C69.7291 67.156 70.7059 66.7512 71.4261 66.0309C72.1463 65.3107 72.5511 64.334 72.5515 63.3154V35.1469C72.5511 34.1283 72.1463 33.1515 71.4261 32.4313C70.7059 31.7111 69.7291 31.3063 68.7105 31.3059ZM68.7105 63.3154H30.3005V35.1469H68.7105V63.3154ZM43.1011 49.2311C44.1142 49.2318 45.1047 48.9319 45.9474 48.3695C46.7901 47.8071 47.447 47.0074 47.8351 46.0716C48.2232 45.1358 48.325 44.1059 48.1277 43.1122C47.9304 42.1185 47.4428 41.2057 46.7265 40.4891C46.0103 39.7726 45.0977 39.2846 44.1041 39.0868C43.1105 38.889 42.0806 38.9904 41.1446 39.3781C40.2086 39.7658 39.4086 40.4223 38.8458 41.2647C38.283 42.1071 37.9827 43.0975 37.9829 44.1106C37.9844 45.4684 38.5245 46.7701 39.4846 47.7301C40.4448 48.6901 41.7466 49.2299 43.1043 49.2311H43.1011ZM35.936 59.4744H50.2745C50.7158 59.5066 51.1519 59.3632 51.488 59.0755C51.8241 58.7877 52.0329 58.3788 52.069 57.9379V56.4013C52.069 53.8589 49.6602 51.7921 46.6915 51.7921C45.8271 51.7921 45.1952 52.4323 43.1067 52.4323C40.9539 52.4323 40.4338 51.7921 39.5218 51.7921C36.5531 51.7921 34.1443 53.8565 34.1443 56.4013V57.9379C34.1804 58.3783 34.3888 58.7867 34.7243 59.0744C35.0598 59.3621 35.4952 59.5059 35.936 59.4744ZM55.2684 54.3525H64.2307C64.4004 54.3521 64.563 54.2845 64.6829 54.1645C64.8029 54.0445 64.8705 53.882 64.871 53.7123V52.4314C64.8705 52.2617 64.8029 52.0992 64.6829 51.9792C64.563 51.8592 64.4004 51.7916 64.2307 51.7911H55.2684C55.0987 51.7916 54.9361 51.8592 54.8162 51.9792C54.6962 52.0992 54.6286 52.2617 54.6281 52.4314V53.7118C54.6285 53.8816 54.696 54.0443 54.816 54.1643C54.936 54.2844 55.0986 54.3521 55.2684 54.3525ZM55.2684 49.2311H64.2307C64.4004 49.2306 64.563 49.163 64.6829 49.0431C64.8029 48.9231 64.8705 48.7605 64.871 48.5909V47.3104C64.8705 47.1408 64.8029 46.9782 64.6829 46.8582C64.563 46.7383 64.4004 46.6707 64.2307 46.6702H55.2684C55.0987 46.6707 54.9361 46.7383 54.8162 46.8582C54.6962 46.9782 54.6286 47.1408 54.6281 47.3104V48.5909C54.6286 48.7605 54.6962 48.9231 54.8162 49.0431C54.9361 49.163 55.0987 49.2306 55.2684 49.2311ZM55.2684 44.1097H64.2307C64.4004 44.1092 64.563 44.0416 64.6829 43.9216C64.8029 43.8017 64.8705 43.6391 64.871 43.4695V42.189C64.8705 42.0193 64.8029 41.8568 64.6829 41.7368C64.563 41.6169 64.4004 41.5492 64.2307 41.5488H55.2684C55.0987 41.5492 54.9361 41.6169 54.8162 41.7368C54.6962 41.8568 54.6286 42.0193 54.6281 42.189V43.4695C54.6284 43.6393 54.6959 43.8021 54.8159 43.9222C54.9358 44.0424 55.0985 44.1101 55.2684 44.1106V44.1097Z" fill="white"/>
-                    <defs>
-                    <linearGradient id="paint0_linear_9_243" x1="92.1991" y1="73.99" x2="0.275089" y2="29.498" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#5FC3FF"/>
-                    <stop offset="1" stop-color="#93BCD4"/>
-                    </linearGradient>
-                    </defs>
-                    </svg>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-3 p-3 text-center">
+                            <svg width="99" height="98" viewBox="0 0 99 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M49.2751 98C76.337 98 98.2751 76.062 98.2751 49C98.2751 21.938 76.337 0 49.2751 0C22.2131 0 0.275085 21.938 0.275085 49C0.275085 76.062 22.2131 98 49.2751 98Z" fill="url(#paint0_linear_9_243)"/>
+                            <path d="M68.7105 31.3059H30.3005C29.282 31.3063 28.3052 31.7111 27.585 32.4313C26.8648 33.1515 26.46 34.1283 26.4596 35.1469V63.3154C26.46 64.334 26.8648 65.3107 27.585 66.0309C28.3052 66.7512 29.282 67.156 30.3005 67.1563H68.7105C69.7291 67.156 70.7059 66.7512 71.4261 66.0309C72.1463 65.3107 72.5511 64.334 72.5515 63.3154V35.1469C72.5511 34.1283 72.1463 33.1515 71.4261 32.4313C70.7059 31.7111 69.7291 31.3063 68.7105 31.3059ZM68.7105 63.3154H30.3005V35.1469H68.7105V63.3154ZM43.1011 49.2311C44.1142 49.2318 45.1047 48.9319 45.9474 48.3695C46.7901 47.8071 47.447 47.0074 47.8351 46.0716C48.2232 45.1358 48.325 44.1059 48.1277 43.1122C47.9304 42.1185 47.4428 41.2057 46.7265 40.4891C46.0103 39.7726 45.0977 39.2846 44.1041 39.0868C43.1105 38.889 42.0806 38.9904 41.1446 39.3781C40.2086 39.7658 39.4086 40.4223 38.8458 41.2647C38.283 42.1071 37.9827 43.0975 37.9829 44.1106C37.9844 45.4684 38.5245 46.7701 39.4846 47.7301C40.4448 48.6901 41.7466 49.2299 43.1043 49.2311H43.1011ZM35.936 59.4744H50.2745C50.7158 59.5066 51.1519 59.3632 51.488 59.0755C51.8241 58.7877 52.0329 58.3788 52.069 57.9379V56.4013C52.069 53.8589 49.6602 51.7921 46.6915 51.7921C45.8271 51.7921 45.1952 52.4323 43.1067 52.4323C40.9539 52.4323 40.4338 51.7921 39.5218 51.7921C36.5531 51.7921 34.1443 53.8565 34.1443 56.4013V57.9379C34.1804 58.3783 34.3888 58.7867 34.7243 59.0744C35.0598 59.3621 35.4952 59.5059 35.936 59.4744ZM55.2684 54.3525H64.2307C64.4004 54.3521 64.563 54.2845 64.6829 54.1645C64.8029 54.0445 64.8705 53.882 64.871 53.7123V52.4314C64.8705 52.2617 64.8029 52.0992 64.6829 51.9792C64.563 51.8592 64.4004 51.7916 64.2307 51.7911H55.2684C55.0987 51.7916 54.9361 51.8592 54.8162 51.9792C54.6962 52.0992 54.6286 52.2617 54.6281 52.4314V53.7118C54.6285 53.8816 54.696 54.0443 54.816 54.1643C54.936 54.2844 55.0986 54.3521 55.2684 54.3525ZM55.2684 49.2311H64.2307C64.4004 49.2306 64.563 49.163 64.6829 49.0431C64.8029 48.9231 64.8705 48.7605 64.871 48.5909V47.3104C64.8705 47.1408 64.8029 46.9782 64.6829 46.8582C64.563 46.7383 64.4004 46.6707 64.2307 46.6702H55.2684C55.0987 46.6707 54.9361 46.7383 54.8162 46.8582C54.6962 46.9782 54.6286 47.1408 54.6281 47.3104V48.5909C54.6286 48.7605 54.6962 48.9231 54.8162 49.0431C54.9361 49.163 55.0987 49.2306 55.2684 49.2311ZM55.2684 44.1097H64.2307C64.4004 44.1092 64.563 44.0416 64.6829 43.9216C64.8029 43.8017 64.8705 43.6391 64.871 43.4695V42.189C64.8705 42.0193 64.8029 41.8568 64.6829 41.7368C64.563 41.6169 64.4004 41.5492 64.2307 41.5488H55.2684C55.0987 41.5492 54.9361 41.6169 54.8162 41.7368C54.6962 41.8568 54.6286 42.0193 54.6281 42.189V43.4695C54.6284 43.6393 54.6959 43.8021 54.8159 43.9222C54.9358 44.0424 55.0985 44.1101 55.2684 44.1106V44.1097Z" fill="white"/>
+                            <defs>
+                            <linearGradient id="paint0_linear_9_243" x1="92.1991" y1="73.99" x2="0.275089" y2="29.498" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#5FC3FF"/>
+                            <stop offset="1" stop-color="#93BCD4"/>
+                            </linearGradient>
+                            </defs>
+                            </svg>
+                        </div>
+                        <div class="col-sm-9 float-start p-3">
+                            <h4>BPH</h4>
+                            <p>Badan Pengurus Harian (BPH) merupakan salah satu badan yang melakukan fungsi control, koordinasi, pengembangan dan peningkatan sistem menajemen administrasi dan keuangan serta komunikasi dalam membangun hubungan internal dan eksternal BSO HMJTI.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-9 float-start p-3">
-                    <h4>BPH</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis accusantium eius corrupti non nesciunt enim quia impedit magni nulla tempore officia rem dicta voluptas id, mollitia ea repellat libero quam.</p>
-                </div>
-                </div>
-            </div>
             </div>
         </div>
         <div class="col-lg-6 col-md-12 p-4">
@@ -97,7 +99,7 @@
                 </div>
                 <div class="col-sm-9 float-start p-3">
                     <h4>Divisi Administrasi</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis accusantium eius corrupti non nesciunt enim quia impedit magni nulla tempore officia rem dicta voluptas id, mollitia ea repellat libero quam.</p>
+                    <p>Divisi ini bertugas mengurusi administrasi dari BSO HMJTI dan seluruh divisi, misalnya Penyimpanan surat-surat, laporan keuangan, laporan pertanggungjawaban, proposal, dan bertanggung jawab mengurusi ruang kesekretariatan.</p>
                 </div>
                 </div>
             </div>
@@ -121,7 +123,7 @@
                 </div>
                 <div class="col-sm-9 float-start p-3">
                     <h4>Divisi Perhub</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ratione excepturi, cum pariatur sit maxime praesentium fuga, neque recusandae iusto, asperiores a voluptate animi natus incidunt rem iste tempore quia?</p>
+                    <p>Divisi yang bertanggung jawab atas segala komunikasi dan informasi baik internal dan eksternal Himpunan Mahasiswa Jurusan Teknologi Informasi.</p>
                 </div>
                 </div>
             </div>
@@ -145,8 +147,8 @@
 
                 </div>
                 <div class="col-sm-9 float-start p-3">
-                    <h4>Divisi Minbak</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ducimus consectetur explicabo alias rem quos eaque reprehenderit. Quos obcaecati est numquam nihil doloribus voluptatibus similique, reprehenderit eos quaerat, quo consequuntur.</p>
+                    <h4>Divisi Minat Bakat</h4>
+                    <p>Divisi yang Bertanggung jawab atas segala komunikasi dan informasi baik internal dan eksternal Himpunan Mahasiswa Jurusan Teknologi Informasi.</p>
                 </div>
                 </div>
             </div>
@@ -171,7 +173,7 @@
                 </div>
                 <div class="col-sm-9 float-start p-3">
                     <h4>Divisi Kewirausahaan</h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit sequi alias, repudiandae similique quibusdam hic impedit ducimus odit dicta aperiam pariatur est dolores perspiciatis autem blanditiis sunt ea nulla officiis.</p>
+                    <p>Divisi yang Bertanggung jawab dalam melaksanakan kegiatan wirausaha mandiri dan pengembangan kemampuan technopreneur mahasiswa Jurusan Teknologi Informasi.</p>
                 </div>
                 </div>
             </div>
@@ -238,3 +240,13 @@
         </div>
     </section>
 @endsection
+@push('js')
+    <script>
+         new Typed('#typed',{
+          strings : ['{{ $data_banner->moto }}'],
+          typeSpeed : 100,
+          delaySpeed : 100,
+          loop : true
+        });
+    </script>
+@endpush

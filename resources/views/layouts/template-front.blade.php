@@ -6,6 +6,7 @@
       <title>BSO HMJTI-Kampus Bondowoso</title>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
       <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+      <link rel="shortcut icon" href="{{ asset('frontend/assets/images/logo.png') }}" type="image/x-icon">
       <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}">
       <link rel="stylesheet" href="https://cdn.plyr.io/3.6.9/plyr.css" />
       @stack('css')
@@ -21,12 +22,7 @@
       <script src="https://cdn.plyr.io/3.6.9/plyr.polyfilled.js"></script>
       <script>
         const player = new Plyr('#player');
-        new Typed('#typed',{
-          strings : ['Bersinergi dari Hati, Berdedikasi untuk TI !'],
-          typeSpeed : 100,
-          delaySpeed : 100,
-          loop : true
-        });
+
       </script>
       @stack('js')
     </body>

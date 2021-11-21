@@ -78,7 +78,7 @@ p{
 .banner{
     position: absolute;
     /* margin-left: -50px; */
-    top: 50%;
+    top: 45%;
     margin-top: -50px;
 }
 .banner h2{
@@ -204,6 +204,13 @@ p{
 .header__footer .footer__text__contact ul li a{
   color: var(--color-secondary);
 
+}
+.header__footer .copyright__text a{
+    color: var(--background-color);
+    text-decoration: none;
+}
+.header__footer .copyright__text a:hover{
+    color: var(--btn-primary);
 }
 
 /* Menu blog */

@@ -11,6 +11,10 @@ class BlogController extends Controller
     protected $param;
     public function index()
     {
+        $this->param['data_banner'] = Blog::select('blogs.title','blogs.author','blogs.slug','blogs.content','blogs.images','blogs.category_id','blogs.updated_at','blog_category.id as id_kategori','blog_category.category_name')
+                                    ->join('blog_category','blog_category.id','blogs.category_id')
+                                    ->orderBy('blogs.id','DESC')
+                                    ->get();
         $this->param['data'] = Blog::select('blogs.title','blogs.author','blogs.slug','blogs.content','blogs.images','blogs.category_id','blogs.updated_at','blog_category.id as id_kategori','blog_category.category_name')
                                 ->join('blog_category','blog_category.id','blogs.category_id')
                                 ->orderBy('blogs.id','DESC')
@@ -27,6 +31,10 @@ class BlogController extends Controller
 
     public function detailBlog($slug)
     {
+        $this->param['data_banner'] = Blog::select('blogs.title','blogs.author','blogs.slug','blogs.content','blogs.images','blogs.category_id','blogs.updated_at','blog_category.id as id_kategori','blog_category.category_name')
+                                    ->join('blog_category','blog_category.id','blogs.category_id')
+                                    ->orderBy('blogs.id','DESC')
+                                    ->get();
         $this->param['data'] = Blog::select('blogs.title','blogs.author','blogs.slug','blogs.content','blogs.images','blogs.category_id','blogs.updated_at','blog_category.id as id_kategori','blog_category.category_name')
                                 ->join('blog_category','blog_category.id','blogs.category_id')
                                 ->where('blogs.slug',$slug)
@@ -39,5 +47,23 @@ class BlogController extends Controller
                                     ->get();
         // return $slug;
         return view('blog.detail-blog',$this->param);
+    }
+    public function detailTagBlog($tag)
+    {
+        $this->param['data_banner'] = Blog::select('blogs.title','blogs.author','blogs.slug','blogs.content','blogs.images','blogs.category_id','blogs.updated_at','blog_category.id as id_kategori','blog_category.category_name')
+                                ->join('blog_category','blog_category.id','blogs.category_id')
+                                ->orderBy('blogs.id','DESC')
+                                ->get();
+        $this->param['data'] = Blog::select('blogs.title','blogs.author','blogs.slug','blogs.content','blogs.images','blogs.category_id','blogs.updated_at','blog_category.id as id_kategori','blog_category.category_name')
+                                ->join('blog_category','blog_category.id','blogs.category_id')
+                                ->where('blog_category.category_name',$tag)
+                                ->orderBy('blogs.id','ASC')
+                                ->paginate(4);
+        $this->param['data_recent'] = Blog::select('blogs.title','blogs.author','blogs.slug','blogs.content','blogs.images','blogs.category_id','blogs.updated_at','blog_category.id as id_kategori','blog_category.category_name')
+                                    ->join('blog_category','blog_category.id','blogs.category_id')
+                                    ->orderBy('blogs.id','ASC')
+                                    ->limit(3)
+                                    ->get();
+        return view('blog.blog',$this->param);
     }
 }

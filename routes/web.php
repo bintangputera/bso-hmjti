@@ -36,6 +36,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 Route::get('/',[HomeController::class, 'index'])->name('home.front');
 Route::get('/blog',[FrontendBlogController::class,'index'])->name('blog.front');
 Route::get('/blog/detail/{slug}',[FrontendBlogController::class,'detailBlog'])->name('blog.front.detail');
+Route::get('/blog/{tag}/',[FrontendBlogController::class,'detailTagBlog'])->name('blog.front.tag');
 Route::get('/struktur',[StructureController::class,'index'])->name('structure.front');
 Route::get('/profil-bso',[AboutController::class,'index'])->name('profil.front');
 

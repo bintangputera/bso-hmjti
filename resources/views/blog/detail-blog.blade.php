@@ -31,12 +31,13 @@
 
                 @endforelse
             </ul>
-            <h4 class="pt-4">Link Terkait</h4>
+            <h4 class="pt-4">Category</h4>
             <ul>
-                <li><a href="https://polije.ac.id/" target="_blank">Politeknik Negeri Jember</a></li>
-                <li><a href="http://jti.polije.ac.id/" target="_blank">Jurusan Teknologi Informasi</a></li>
-                <li><a href="https://polije.ac.id/kemahasiswaan/" target="_blank">BEM KM Polije</a></li>
-                <li><a href="https://hmjti-polije.com/profile" target="_blank">HMJTI Polije</a></li>
+                @forelse ($data_banner as $item)
+                <li><a href="{{ route('blog.front.tag',$item->category_name) }}">{{ $item->category_name }}</a></li>
+                @empty
+                <p class="text-danger text-center">Data Tidak ada</p>
+                @endforelse
             </ul>
         </div>
     </div>

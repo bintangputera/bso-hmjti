@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Aspirasi;
 use Illuminate\Http\Request;
 
 class AspirasiController extends Controller
@@ -11,9 +12,11 @@ class AspirasiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    protected $param;
     public function index()
     {
-        //
+        $this->param['data'] = Aspirasi::all();
+        return view('pages.aspirasi.index', $this->param);
     }
 
     /**

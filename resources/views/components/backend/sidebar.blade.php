@@ -12,6 +12,9 @@
                 <li class="{{ Request::segment(2) == 'periode' ? 'active' : '' }}">
                     <a href="{{ route('periode.index') }}"><i class="menu-icon ti-time"></i>Periode</a>
                 </li>
+                <li class="{{ Request::segment(2) == 'aspirasi' ? 'active' : '' }}">
+                    <a href="{{ route('aspirasi.index') }}"><i class="menu-icon ti-time"></i>Aspirasi</a>
+                </li>
                 <li class="{{ Request::segment(2) == 'blog' ? 'active' : '' }}">
                     <a href="{{ route('blog.index') }}"><i class="menu-icon fa ti-notepad"></i>Blogs </a>
                 </li>

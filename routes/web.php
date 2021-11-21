@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\BannerController;
+use App\Http\Controllers\ContentController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryBlogsController;
 use App\Http\Controllers\CategoryDivisiController;
@@ -34,7 +34,7 @@ Route::middleware(['auth'])->group(function () {
         // Dashboard
         Route::get('/',[DashboardController::class,'index'])->name('dashboard');
         // Banner
-        Route::resource('banner', BannerController::class);
+        Route::resource('content', ContentController::class);
         // Blog
         Route::resource('blog', BlogController::class);
         // Category Blogs

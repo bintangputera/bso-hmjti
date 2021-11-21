@@ -45,7 +45,7 @@ class BlogController extends Controller
         // return $request;
         $file = $request->file('thumbnailblog');
         $date = date("His");
-        $final_file_name = $date.'.'.$file->getClientOriginalExtension();
+        $final_file_name = $date . '.' . $file->getClientOriginalExtension();
 
         $slug = Str::slug($request->judulblog, '-');
 
@@ -86,7 +86,7 @@ class BlogController extends Controller
             return redirect('administrator/blog')->withStatus('Berhasil menyimpan data');
         } catch (Exception $e) {
             return redirect()->back()->withErrors('Terdapat kesalahan', $e);
-        } catch(\Illuminate\Database\QueryException $e) {
+        } catch (\Illuminate\Database\QueryException $e) {
             return redirect()->back()->withErrors('Terdapat kesalahan', $e);
         }
     }
@@ -127,49 +127,54 @@ class BlogController extends Controller
     public function update(Request $request, $id)
     {
         $file = $request->file('thumbnailblog');
-        $date = date("His");
-        $final_file_name = $date.'.'.$file->getClientOriginalExtension();
 
         $slug = Str::slug($request->judulblog, '-');
 
-        // return $request;
-
-        $request->validate(
-            [
-                'judulblog' => 'required',
-                'authorblog' => 'required',
-                'ktblog' => 'required',
-                'thumbnailblog' => 'required|mimes:png,jpg',
-                'kontenblog' => 'required'
-            ],
-            [
-                'required' => ':Attribute harus terisi',
-            ],
-            [
-                'judulblog' => 'Judul blog',
-                'authorblog' => 'Author',
-                'ktblog' => 'Kategori',
-                'thumbnailblog' => 'Thumbnail',
-                'kontenblog' => 'Konten Blog'
-            ]
-        );
+        // $request->validate(
+        //     [
+        //         'judulblog' => 'required',
+        //         'authorblog' => 'required',
+        //         'ktblog' => 'required',
+        //         'thumbnailblog' => 'mimes:png,jpg',
+        //         'kontenblog' => 'required'
+        //     ],
+        //     [
+        //         'required' => ':Attribute harus terisi',
+        //     ],
+        //     [
+        //         'judulblog' => 'Judul blog',
+        //         'authorblog' => 'Author',
+        //         'ktblog' => 'Kategori',
+        //         'thumbnailblog' => 'Thumbnail',
+        //         'kontenblog' => 'Konten Blog'
+        //     ]
+        // );
         try {
-            $insertBlog = new Blog;
+            $insertBlog = Blog::find($id);
             $insertBlog->title = $request->judulblog;
             $insertBlog->author = $request->authorblog;
             $insertBlog->category_id = $request->ktblog;
             $insertBlog->slug = $slug;
             $insertBlog->content = $request->kontenblog;
 
-            $path = public_path('img/blog');
-            $file->move($path, $final_file_name);
-            $insertBlog->images = $final_file_name;
+            if (isset($file)) {
+                $path = public_path() . '/img/blog/';
+                $file_old = $path . $request->old_thumbnail;
+                unlink($file_old);
+
+                $date = date("His");
+                $final_file_name = $date . '.' . $file->getClientOriginalExtension();
+                $file->move($path, $final_file_name);
+                $insertBlog->images = $final_file_name;
+            }
 
             $insertBlog->save();
+
+            // $insertBlog->save();
             return redirect('administrator/blog')->withStatus('Berhasil menyimpan data');
         } catch (Exception $e) {
             return redirect()->back()->withErrors('Terdapat kesalahan', $e);
-        } catch(\Illuminate\Database\QueryException $e) {
+        } catch (\Illuminate\Database\QueryException $e) {
             return redirect()->back()->withErrors('Terdapat kesalahan', $e);
         }
     }
@@ -186,10 +191,10 @@ class BlogController extends Controller
             $deleteBlog = Blog::findOrFail($id);
             $deleteBlog->delete();
             return redirect('administrator/blog')->withStatus('Berhasil Menghapus Data');
-        } catch (Exception $e){
-            return redirect()->back()->withError('Terdapat Kesalahan',$e);
-          }catch(\Illuminate\Database\QueryException $e){
-            return redirect()->back()->withError('Terdapat Kesalahan',$e);
+        } catch (Exception $e) {
+            return redirect()->back()->withError('Terdapat Kesalahan', $e);
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect()->back()->withError('Terdapat Kesalahan', $e);
         }
     }
 }

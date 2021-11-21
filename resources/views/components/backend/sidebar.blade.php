@@ -6,8 +6,8 @@
                 <li class="{{ request()->routeIs('dashboard') ? 'active' : '' }}">
                     <a href="{{ route('dashboard') }}"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                 </li>
-                <li class="{{ Request::segment(2) == 'banner' ? 'active' : '' }}">
-                    <a href="{{ route('banner.index') }}"><i class="menu-icon ti-image"></i>Banner</a>
+                <li class="{{ Request::segment(2) == 'content' ? 'active' : '' }}">
+                    <a href="{{ route('content.index') }}"><i class="menu-icon ti-image"></i>Content</a>
                 </li>
                 <li class="{{ Request::segment(2) == 'blog' ? 'active' : '' }}">
                     <a href="{{ route('blog.index') }}"><i class="menu-icon fa ti-notepad"></i>Blogs </a>

@@ -31,59 +31,55 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{ route('blog.update', $data->id) }}" method="post" class="form-vertical" enctype="multipart/form-data">
+                        <form action="{{ route('content.update', $data->id) }}" method="post" class="form-vertical" enctype="multipart/form-data">
                             @csrf
                             @method('put')
                             <div class="form-group">
-                                <label for="hf-judulblog" class="form-control-label">Judul Blog</label>
-                                <input type="text" id="hf-judulblog" name="judulblog" placeholder="Masukkan Judul Blog..." value="{{ $data->title }}" class="form-control @error('judulblog') is-invalid @enderror" >
-                                @error('judulblog')
-                                <div class="invalid-feedback">
-                                    <small class="help-block form-text text-danger">{{$message}}</small>
-                                </div>
-                                @enderror
-                            </div>
-                            <input type="hidden" value="{{ $data->images }}" name="old_thumbnail">
-                            <div class="form-group">
-                                <label for="hf-authorblog" class=" form-control-label">Author</label>
-                                <input type="text" id="hf-authorblog" name="authorblog" placeholder="Masukkan Author..." value="{{ $data->author }}" class="form-control @error('authorblog') is-invalid @enderror" >
-                                @error('authorblog')
-                                <div class="invalid-feedback">
-                                    <small class="help-block form-text text-danger">{{$message}}</small>
-                                </div>
-                                @enderror
+                                <img src="{{ asset('img/content/'.$data->banner)}}" height="300"/>
                             </div>
                             <div class="form-group">
-                                <label for="hf-ktblog" class=" form-control-label">Kategori Blog</label>
-                                <select class="form-control" name="ktblog" id="hf-ktblog">
-                                    @forelse ($category as $item)
-                                        <option value="{{ $item->id }}">{{ ucwords($item->category_name ) }}</option>
-                                    @empty
-                                    <p class="text-warning">Tidak ada data</p>
-                                    @endforelse
-                                </select>
-                                @error('ktblog')
-                                <div class="invalid-feedback">
-                                    <small class="help-block form-text text-danger">{{$message}}</small>
-                                </div>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <img src="{{ asset('img/blog/'.$data->images)}}" width="300" height="300"/>
+                                <input type="hidden" value="{{ $data->banner }}" name="old_banner">
                             </div>
                             <div class="form-group">
                                 <label for="hf-ktblog" class=" form-control-label">Thumbnail</label>
-                                <input type="file" id="hf-ktblog" name="thumbnailblog" class="form-control @error('thumbnailblog') is-invalid @enderror">
-                                @error('thumbnailblog')
+                                <input type="file" id="hf-banner" name="banner" class="form-control @error('banner') is-invalid @enderror">
+                                @error('banner')
                                 <div class="invalid-feedback">
                                     <small class="help-block form-text text-danger">{{$message}}</small>
                                 </div>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="hf-ktblog1" class=" form-control-label">Konten Blog</label>
-                                <textarea id="summernote" name="kontenblog" class="form-control @error('kontenblog') is-invalid @enderror">{{ $data->content }}</textarea>
-                                @error('kontenblog')
+                                <label for="hf-visi" class="form-control-label">Visi</label>
+                                <input type="text" id="hf-visi" name="visi" placeholder="Masukkan Visi" value="{{ $data->visi }}" class="form-control @error('visi') is-invalid @enderror" >
+                                @error('visi')
+                                <div class="invalid-feedback">
+                                    <small class="help-block form-text text-danger">{{$message}}</small>
+                                </div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="hf-misi" class=" form-control-label">Misi</label>
+                                <textarea id="misi" name="misi" class="form-control @error('misi') is-invalid @enderror">{{ $data->misi }}</textarea>
+                                @error('misi')
+                                <div class="invalid-feedback">
+                                    <small class="help-block form-text text-danger">{{$message}}</small>
+                                </div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="hf-motto" class="form-control-label">Motto</label>
+                                <input type="text" id="hf-motto" name="motto" placeholder="Masukkan Motto" value="{{ $data->moto }}" class="form-control @error('motto') is-invalid @enderror" >
+                                @error('motto')
+                                <div class="invalid-feedback">
+                                    <small class="help-block form-text text-danger">{{$message}}</small>
+                                </div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="hf-description" class="form-control-label">Deskripsi</label>
+                                <input type="text" id="hf-description" name="desc" placeholder="Masukkan Description" value="{{ $data->desc }}" class="form-control @error('desc') is-invalid @enderror" >
+                                @error('desc')
                                 <div class="invalid-feedback">
                                     <small class="help-block form-text text-danger">{{$message}}</small>
                                 </div>
@@ -120,7 +116,7 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-    $('#summernote').summernote();
+    $('#misi').summernote();
     });
 </script>
 

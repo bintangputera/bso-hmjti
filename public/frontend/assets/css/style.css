@@ -17,6 +17,10 @@ body{
   border: none;
   padding: 12px;
 }
+.page-item.active .page-link{
+    background-color: var(--btn-primary);
+    border-color: var(--btn-primary);
+}
 h4{
   color: var(--color-primary);
 }
@@ -31,7 +35,7 @@ p{
 .navbar-1-1.navbar-light .navbar-nav .nav-link.active {
   font-weight: 500;
   color: var(--color-primary);
-  
+
 }
 .navbar-1-1.navbar-light .navbar-nav .nav-link:hover{
     background-color: var(--background-color);
@@ -49,7 +53,7 @@ p{
 }
 /* banner */
 .banner-image::after{
-    content: ""; 
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -85,18 +89,30 @@ p{
 .banner h3{
     color: #fff;
 }
-.banner .typed {
-  /* border-bottom: 2px solid #ffffff; */
-}
 .banner .typed-cursor{
-   opacity: 1;
-   animation: blink 0.7s infinite;
+    opacity: 1;
+    animation: blink 0.7s infinite;
+ }
+ @keyframes blink{
+     0% { opacity:1; }
+     50% { opacity:0; }
+     100% { opacity:1; }
+ }
+/* banner blog */
+.banner-blog{
+    position: absolute;
+    /* margin-left: -50px; */
+    top: 25%;
+    margin-top: 50px;
 }
-@keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
+.banner-blog h2{
+    font-weight: 800;
+    color: #fff;;
+    font-size: 64px;
 }
+
+
+
 /* header text */
 .header__text h1{
     font-weight: 700;
@@ -174,6 +190,9 @@ p{
 .header__footer .footer__text__contact a{
   text-decoration: none;
 }
+.header__footer .footer__text__contact ul li{
+   padding-bottom: 10px;
+}
 .header__footer .footer__text__contact h6{
   color: var(--background-color);
 }
@@ -187,11 +206,32 @@ p{
 
 }
 
+/* Menu blog */
+.header__blog .card .card-body h3{
+    font-size: 28px;
+    color: var(---primary);
+    font-weight: 600;
+}
+.header__blog .card-text{
+    color: var(--color-secondary);
+    font-size: 14px;
+    line-height: 2rem;
+}
+.header__blog .header__recent h4{
+    font-weight: 700;
+}
+.header__blog .header__recent ul li a{
+    color: var(--color-secondary);
+}
+.header__blog .header__recent ul li{
+    padding-top: 10px;
+}
+
 /* // X-Small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap
 
 // Small devices (landscape phones, 576px and up) */
-/* @media (min-width: 576px) { 
+/* @media (min-width: 576px) {
 
 } */
 
@@ -224,5 +264,5 @@ p{
   color: #fff;
   font-size: 64px;
 }
- 
+
 }

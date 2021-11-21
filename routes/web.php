@@ -5,8 +5,14 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryBlogsController;
 use App\Http\Controllers\CategoryDivisiController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Frontend\AboutController;
+use App\Http\Controllers\Frontend\BlogController as FrontendBlogController;
 use App\Http\Controllers\Frontend\HomeController;
+<<<<<<< Updated upstream
 use App\Http\Controllers\PeriodeController;
+=======
+use App\Http\Controllers\Frontend\StructureController;
+>>>>>>> Stashed changes
 use App\Http\Controllers\StructureDivisiController;
 use Illuminate\Support\Facades\Route;
 use Nette\Schema\Elements\Structure;
@@ -29,7 +35,12 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 // Route::get('/dashboard', function () {
     //     return view('dashboard');
 // });
-Route::get('/',[HomeController::class, 'index'])->name('home');
+Route::get('/',[HomeController::class, 'index'])->name('home.front');
+Route::get('/blog',[FrontendBlogController::class,'index'])->name('blog.front');
+Route::get('/blog/detail/{slug}',[FrontendBlogController::class,'detailBlog'])->name('blog.front.detail');
+Route::get('/struktur',[StructureController::class,'index'])->name('structure.front');
+Route::get('/profil-bso',[AboutController::class,'index'])->name('profil.front');
+
 Route::middleware(['auth'])->group(function () {
     Route::prefix('administrator')->group(function (){
         // Dashboard

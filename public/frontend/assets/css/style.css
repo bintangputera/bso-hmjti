@@ -249,6 +249,14 @@ p{
 .header__struktur p{
     font-size: 12px;
 }
+
+/* header profil */
+.header__profil h2{
+    font-weight: 600;
+}
+.header__profil p{
+    font-size: 16px;
+}
 /* // X-Small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap
 

@@ -1,4 +1,5 @@
 @extends('layouts.template')
+@section('title', ucwords(Request::segment(2)))
 @push('css')
     <link rel="stylesheet" href="{{ asset('backend/assets/lib/datatable/dataTables.bootstrap.min.css') }}">
 @endpush

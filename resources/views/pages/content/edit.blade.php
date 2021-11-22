@@ -1,4 +1,5 @@
 @extends('layouts.template')
+@section('title', ucwords(Request::segment(2)))
 @push('css')
 {{-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"> --}}
 

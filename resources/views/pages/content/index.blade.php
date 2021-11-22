@@ -1,4 +1,7 @@
 @extends('layouts.template')
+
+@section('title', ucwords(Request::segment(2)))
+
 @push('css')
     <link rel="stylesheet" href="{{ asset('backend/assets/lib/datatable/dataTables.bootstrap.min.css') }}">
 @endpush
@@ -59,7 +62,9 @@
                                     @forelse ($data as $item)
                                         <tr>
                                             <td>{{ ucwords($item->visi ) }}</td>
-                                            <td>{{ ucwords($item->misi ) }}</td>
+                                            <td>
+                                                {!! $item->misi !!}
+                                            </td>
                                             <td>{{ ucwords($item->desc ) }}</td>
                                             <td>{{ ucwords($item->banner ) }}</td>
                                             <td>

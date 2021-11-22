@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryBlogsController;
 use App\Http\Controllers\CategoryDivisiController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Frontend\AboutController;
+use App\Http\Controllers\Frontend\AspirasiController as FrontendAspirasiController;
 use App\Http\Controllers\Frontend\BlogController as FrontendBlogController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\PeriodeController;
@@ -38,6 +39,8 @@ Route::get('/blog',[FrontendBlogController::class,'index'])->name('blog.front');
 Route::get('/blog/detail/{slug}',[FrontendBlogController::class,'detailBlog'])->name('blog.front.detail');
 Route::get('/blog/{tag}/',[FrontendBlogController::class,'detailTagBlog'])->name('blog.front.tag');
 Route::get('/struktur',[StructureController::class,'index'])->name('structure.front');
+Route::get('/aspirasi',[FrontendAspirasiController::class,'index'])->name('aspirasi.front');
+Route::post('/aspirasi',[FrontendAspirasiController::class, 'store'])->name('aspirasi.front.store');
 Route::get('/profil-bso',[AboutController::class,'index'])->name('profil.front');
 
 Route::middleware(['auth'])->group(function () {

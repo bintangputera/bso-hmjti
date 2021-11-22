@@ -39,7 +39,7 @@
               <a class="nav-link px-md-3 {{ Request::segment(1) == 'struktur' ? 'active' : '' }}" href="{{ route('structure.front') }}">Struktur Kepengurusan</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link px-md-3 {{ Request::segment(1) == 'struktur' ? 'active' : '' }}" href="{{ route('structure.front') }}">Aspirasi</a>
+                <a class="nav-link px-md-3 {{ Request::segment(1) == 'aspirasi' ? 'active' : '' }}" href="{{ route('aspirasi.front') }}">Aspirasi</a>
               </li>
           </ul>
         </div>

@@ -1,4 +1,7 @@
 @extends('layouts.template')
+
+@section('title', ucwords(Request::segment(2)))
+
 @section('content')
 <div class="breadcrumbs">
     <div class="breadcrumbs-inner">

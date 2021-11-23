@@ -67,6 +67,7 @@
                                         <th>Position</th>
                                         <th>Divisi</th>
                                         <th>Images</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -76,7 +77,14 @@
                                             <td>{{ ucwords($item->name ) }}</td>
                                             <td>{{ ucwords($item->position ) }}</td>
                                             <td>{{ $item->divisi_name }}</td>
-                                            <td>{{ ucwords($item->images ) }}</td>
+                                            <td><img src="{{ asset('img/pengurus/'.$item->images) }}"></td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <div class="p-1">
+                                                        <a href="{{ route('structure-division.edit', $item->id) }}" class="btn btn-warning"><i class="ti-pencil-alt"></i></a>
+                                                    </div>
+                                                </div>
+                                            </td>
                                         </tr>
                                     @empty
                                         <p class="text-warning">Tidak ada data</p>

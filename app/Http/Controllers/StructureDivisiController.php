@@ -18,7 +18,7 @@ class StructureDivisiController extends Controller
     protected $param;
     public function index()
     {
-        $this->param['data'] = StructureDivisi::select('divisi.position', 'divisi.name', 'divisi.images', 'divisi.category_divisi_id', 'category_divisi.id as id_divisi', 'category_divisi.divisi_name',)->join('category_divisi', 'category_divisi.id', 'divisi.category_divisi_id')->get();
+        $this->param['data'] = StructureDivisi::select('divisi.id','divisi.position', 'divisi.name', 'divisi.images', 'divisi.category_divisi_id', 'category_divisi.id as id_divisi', 'category_divisi.divisi_name',)->join('category_divisi', 'category_divisi.id', 'divisi.category_divisi_id')->get();
         // return $this->param;
         return view('pages.divisi.index', $this->param);
     }
@@ -58,7 +58,7 @@ class StructureDivisiController extends Controller
                 'periode' => 'required'
             ],
             [
-                'required' => ':Attributes harus terisi'
+                'required' => ':Attribute harus terisi'
             ],
             [
                 'nama' => 'Nama',
@@ -108,7 +108,11 @@ class StructureDivisiController extends Controller
      */
     public function edit($id)
     {
-        //
+        $this->param['data'] = StructureDivisi::findOrFail($id);
+        $this->param['category_divisi'] = CategoryDivisi::all();
+        $this->param['periode'] = Periode::all();
+        // return $this->param;
+        return view('pages.divisi.edit', $this->param);
     }
 
     /**
@@ -120,7 +124,53 @@ class StructureDivisiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $file = $request->file('foto');
+
+        $request->validate(
+            [
+                'nama' => 'required',
+                'posisi' => 'required',
+                'divisi' => 'required',
+                'foto' => 'mimes:png,jpg',
+                'periode' => 'required'
+            ],
+            [
+                'required' => ':Attribute harus terisi'
+            ],
+            [
+                'nama' => 'Nama',
+                'posisi' => 'Posisi',
+                'divisi' => 'Divisi',
+                'foto' => 'Foto',
+                'periode' => 'Periode'
+            ]
+        );
+        try {
+            $updateDivisi = StructureDivisi::find($id);
+            $updateDivisi->name = $request->nama;
+            $updateDivisi->position = $request->posisi;
+            $updateDivisi->category_divisi_id = $request->divisi;
+            $updateDivisi->periode_id = $request->periode;
+
+            if (isset($file)) {
+                $path = public_path() . '/img/pengurus/';
+                $file_old = $path . $request->old_picture;
+                unlink($file_old);
+
+                $date = date("His");
+                $final_file_name = $date . '.' . $file->getClientOriginalExtension();
+                $file->move($path, $final_file_name);
+                $updateDivisi->images = $final_file_name;
+            }
+
+            $updateDivisi->save();
+
+            return redirect('administrator/structure-division')->withStatus('Berhasil menyimpan data');
+        } catch (Exception $e) {
+            return redirect()->back()->withErrors('Terdapat kesalahan', $e);
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect()->back()->withErrors('Terdapat kesalahan', $e);
+        }
     }
 
     /**

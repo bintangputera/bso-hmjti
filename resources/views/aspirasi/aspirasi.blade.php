@@ -69,8 +69,9 @@
                             @enderror
                         </div>
                         <br>
-                    <button type="submit" class="btn btn-outline-secondary btn-md">
-                        <i class="fa fa-dot-circle-o"></i> Kirim
+
+                    <button type="submit" class="btn btn-primary btn-md float-end">
+                        <i class="fa fa-dot-circle-o"></i> Kirim Aspirasi
                     </button>
           </form>
     </form>

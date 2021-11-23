@@ -33,7 +33,7 @@
               <a class="nav-link px-md-3 {{ Request::segment(1) == 'blog' ? 'active' : '' }}" href="{{ route('blog.front') }}">Blog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link px-md-3 {{ Request::segment(1) == 'profil' ? 'active' : '' }}" href="{{ route('profil.front') }}">Profil BSO HMJTI</a>
+              <a class="nav-link px-md-3 {{ Request::segment(1) == 'profil-bso' ? 'active' : '' }}" href="{{ route('profil.front') }}">Profil BSO HMJTI</a>
             </li>
             <li class="nav-item">
               <a class="nav-link px-md-3 {{ Request::segment(1) == 'struktur' ? 'active' : '' }}" href="{{ route('structure.front') }}">Struktur Kepengurusan</a>

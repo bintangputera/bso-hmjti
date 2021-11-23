@@ -128,7 +128,7 @@ class CategoryDivisiController extends Controller
         try {
             $deleteCategoryDivisi = CategoryDivisi::findOrFail($id);
             $deleteCategoryDivisi->delete();
-            return redirect('category-division')->withStatus('Berhasil Menghapus Data');
+            return redirect('administrator/category-division')->withStatus('Berhasil Menghapus Data');
           } catch (Exception $e){
             return redirect()->back()->withError('Terdapat Kesalahan',$e);
           }catch(\Illuminate\Database\QueryException $e){

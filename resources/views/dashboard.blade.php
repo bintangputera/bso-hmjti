@@ -6,13 +6,30 @@
             <div class="card">
                 <div class="card-body">
                     <div class="stat-widget-five">
+                        <div class="stat-icon dib flat-color-3">
+                            <i class="ti-id-badge"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="text-left dib">
+                                <div class="stat-text"><span class="count">{{ $divisi }}</span></div>
+                                <div class="stat-heading">Divisi</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="stat-widget-five">
                         <div class="stat-icon dib flat-color-1">
                             <i class="ti-image"></i>
                         </div>
                         <div class="stat-content">
                             <div class="text-left dib">
-                                <div class="stat-text"><span class="count">23569</span></div>
-                                <div class="stat-heading">Content Banner</div>
+                                <div class="stat-text"><span class="count">{{ $pengurus }}</span></div>
+                                <div class="stat-heading">Pengurus</div>
                             </div>
                         </div>
                     </div>
@@ -29,7 +46,7 @@
                         </div>
                         <div class="stat-content">
                             <div class="text-left dib">
-                                <div class="stat-text"><span class="count">3435</span></div>
+                                <div class="stat-text"><span class="count">{{ $blog }}</span></div>
                                 <div class="stat-heading">Blogs</div>
                             </div>
                         </div>
@@ -38,23 +55,7 @@
             </div>
         </div>
 
-        <div class="col-lg-4 col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="stat-widget-five">
-                        <div class="stat-icon dib flat-color-3">
-                            <i class="ti-id-badge"></i>
-                        </div>
-                        <div class="stat-content">
-                            <div class="text-left dib">
-                                <div class="stat-text"><span class="count">349</span></div>
-                                <div class="stat-heading">Structure Division</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
 </div>
 @endsection

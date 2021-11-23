@@ -17,7 +17,7 @@
           <div class="col-lg-6 footer__text__contact">
             <p>Jl. Raya Situbondo, Blindungan, Kec. Bondowoso, Kabupaten Bondowoso, Jawa Timur 68211</p>
             <div class="mb-2">
-              <a href="" class="">
+              <a href="https://www.instagram.com/bso_hmjti/" class="">
                   <div class="d-flex">
                   <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                   width="24" height="24"
@@ -29,7 +29,7 @@
               </a>
             </div>
             <div class="mb-2">
-              <a href="">
+              <a href="mailto:bso.hmjti@gmail.com">
                 <div class="d-flex">
                   <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                   width="24" height="24"
@@ -40,7 +40,7 @@
               </a>
             </div>
             <div class="mb-2">
-              <a href="">
+              <a href="https://wa.me/083846997665">
                 <div class="d-flex">
                   <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                     width="24" height="24"

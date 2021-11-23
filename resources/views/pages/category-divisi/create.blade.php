@@ -7,7 +7,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>{{ ucwords(str_replace('-',' ',Request::segment(1))) }}</h1>
+                        <h1>{{ ucwords(str_replace('-',' ',Request::segment(2))) }}</h1>
                     </div>
                 </div>
             </div>
@@ -16,8 +16,8 @@
                     <div class="page-title">
                         <ol class="breadcrumb text-end">
                             <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                            <li class=""><a href="{{ route('category-division.index') }}">{{ ucwords(str_replace('-',' ',Request::segment(1))) }}</a> </li>
-                            <li class="active">{{ ucwords(str_replace('-',' ',Request::segment(3))) }}</li>
+                            <li class=""><a href="{{ route('category-division.index') }}">{{ ucwords(str_replace('-',' ',Request::segment(2))) }}</a> </li>
+                            <li class="active">{{ ucwords(str_replace('-',' ',Request::segment(4))) }}</li>
                         </ol>
                     </div>
                 </div>

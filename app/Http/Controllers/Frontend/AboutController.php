@@ -11,6 +11,7 @@ class AboutController extends Controller
     private $param;
     public function index()
     {
+        // $this->param['tujuan'] = \File::get(public_path('ad-art/tujuan.txt'));
         return view('profil.profil');
     }
 }

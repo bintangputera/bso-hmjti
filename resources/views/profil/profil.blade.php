@@ -13,6 +13,9 @@
     <div class="row justify-content-center">
         <div class="col-lg-8 col-md-12 text-center">
           <h2 class="mb-3 mt-5">Tujuan BSO HMJTI</h2>
+          <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit ab minima veniam error deserunt repudiandae perferendis repellendus delectus nam quis earum explicabo provident iusto, id odio totam laboriosam blanditiis ad.
+          </p>
         </div>
     </div>
 </section>

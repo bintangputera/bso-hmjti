@@ -11,7 +11,7 @@
                 <div class="col-sm-4">
                     <div class="page-header float-left">
                         <div class="page-title">
-                            <h1>{{ ucwords(str_replace('-',' ',Request::segment(1))) }}</h1>
+                            <h1>{{ ucwords(str_replace('-',' ',Request::segment(2))) }}</h1>
                         </div>
                     </div>
                 </div>

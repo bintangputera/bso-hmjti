@@ -22,7 +22,7 @@
                         <div class="page-title">
                             <ol class="breadcrumb text-end">
                                 <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                                <li class="active">{{ ucwords(str_replace('-',' ',Request::segment(2))) }}</li>
+                                <li class="active">{{ ucwords(str_replace('-',' ',Request::segment(4))) }}</li>
                             </ol>
                         </div>
                     </div>

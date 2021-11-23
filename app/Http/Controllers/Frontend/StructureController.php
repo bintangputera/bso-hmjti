@@ -11,6 +11,6 @@ class StructureController extends Controller
     private $param;
     public function index()
     {
-
+        return view('struktur.struktur');
     }
 }

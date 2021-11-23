@@ -18,8 +18,9 @@ class StructureDivisiController extends Controller
     protected $param;
     public function index()
     {
-        $this->param['data'] = StructureDivisi::select('divisi.id','divisi.position', 'divisi.name', 'divisi.images', 'divisi.category_divisi_id', 'category_divisi.id as id_divisi', 'category_divisi.divisi_name',)->join('category_divisi', 'category_divisi.id', 'divisi.category_divisi_id')->get();
-        // return $this->param;
+        $this->param['data'] = StructureDivisi::select('divisi.*', 'category_divisi.id as id_divisi', 'category_divisi.divisi_name',)
+        ->join('category_divisi', 'category_divisi.id', '=', 'divisi.category_divisi_id')
+        ->get();
         return view('pages.divisi.index', $this->param);
     }
 

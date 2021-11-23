@@ -77,7 +77,7 @@
                                             <td>{{ ucwords($item->name ) }}</td>
                                             <td>{{ ucwords($item->position ) }}</td>
                                             <td>{{ $item->divisi_name }}</td>
-                                            <td><img src="{{ asset('img/pengurus/'.$item->images) }}"></td>
+                                            <td><img src="{{ asset('img/pengurus/'.$item->images) }}" width="100"></td>
                                             <td>
                                                 <div class="d-flex">
                                                     <div class="p-1">

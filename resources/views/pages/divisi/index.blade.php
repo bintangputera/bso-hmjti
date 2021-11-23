@@ -1,5 +1,7 @@
 @extends('layouts.template')
+
 @section('title', ucwords(Request::segment(2)))
+
 @push('css')
     <link rel="stylesheet" href="{{ asset('backend/assets/lib/datatable/dataTables.bootstrap.min.css') }}">
 @endpush
@@ -44,7 +46,7 @@
         <div class="animated fadeIn">
             <div class="row">
                 <div class="col-sm-12">
-                    <a href="{{ route('blog.create') }}">
+                    <a href="{{ route('structure-division.create') }}">
                         <button class="btn btn-primary btn-icon-split mb-3 float-left">
                             <span class="icon text-white">
                                 <i class="ti-plus"></i>&nbsp;Tambah Data
@@ -61,32 +63,20 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Judul Blog</th>
-                                        <th>Aksi</th>
+                                        <th>Nama</th>
+                                        <th>Position</th>
+                                        <th>Divisi</th>
+                                        <th>Images</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @forelse ($data as $item)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ ucwords($item->title ) }}</td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="p-1">
-                                                        <a href="{{ route('blog.edit',$item->id) }}" class="btn btn-warning"><i class="ti-pencil-alt"></i></a>
-                                                    </div>
-                                                    <div class="p-1">
-                                                        <form action="{{ route('blog.destroy',$item->id) }}" method="POST">
-                                                            @method('delete')
-                                                            @csrf
-                                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Hapus Data ?')"><i class="ti-trash"></i></button>
-                                                        </form>
-                                                    </div>
-                                                    <div class="p-1">
-                                                        <a href="{{ route('blog.show',$item->id) }}" class="btn btn-info"><i class="ti-info"></i></a>
-                                                    </div>
-                                                </div>
-                                            </td>
+                                            <td>{{ ucwords($item->name ) }}</td>
+                                            <td>{{ ucwords($item->position ) }}</td>
+                                            <td>{{ $item->divisi_name }}</td>
+                                            <td>{{ ucwords($item->images ) }}</td>
                                         </tr>
                                     @empty
                                         <p class="text-warning">Tidak ada data</p>

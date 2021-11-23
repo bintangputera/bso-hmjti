@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CategoryDivisi;
+use App\Models\StructureDivisi;
+use App\Models\Periode;
 use Illuminate\Http\Request;
+use Exception;
 
 class StructureDivisiController extends Controller
 {
@@ -11,9 +15,12 @@ class StructureDivisiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    protected $param;
     public function index()
     {
-
+        $this->param['data'] = StructureDivisi::select('divisi.position', 'divisi.name', 'divisi.images', 'divisi.category_divisi_id', 'category_divisi.id as id_divisi', 'category_divisi.divisi_name',)->join('category_divisi', 'category_divisi.id', 'divisi.category_divisi_id')->get();
+        // return $this->param;
+        return view('pages.divisi.index', $this->param);
     }
 
     /**
@@ -23,7 +30,9 @@ class StructureDivisiController extends Controller
      */
     public function create()
     {
-        //
+        $this->param['category_divisi'] = CategoryDivisi::all();
+        $this->param['periode'] = Periode::all();
+        return view('pages.divisi.create', $this->param);
     }
 
     /**
@@ -34,7 +43,50 @@ class StructureDivisiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return $request->file('foto');
+
+        $file = $request->file('foto');
+        $date = date("His");
+        $final_file_name = $date . '.' . $file->getClientOriginalExtension();
+
+        $request->validate(
+            [
+                'nama' => 'required',
+                'posisi' => 'required',
+                'divisi' => 'required',
+                'foto' => 'required|mimes:png,jpg',
+                'periode' => 'required'
+            ],
+            [
+                'required' => ':Attributes harus terisi'
+            ],
+            [
+                'nama' => 'Nama',
+                'posisi' => 'Posisi',
+                'divisi' => 'Divisi',
+                'foto' => 'Foto',
+                'periode' => 'Periode'
+            ]
+        );
+        try {
+            $insertDivisi = new StructureDivisi();
+            $insertDivisi->name = $request->nama;
+            $insertDivisi->position = $request->posisi;
+            $insertDivisi->category_divisi_id = $request->divisi;
+            $insertDivisi->periode_id = $request->periode;
+
+            $path = public_path('img/pengurus');
+            $file->move($path, $final_file_name);
+            $insertDivisi->images = $final_file_name;
+
+            $insertDivisi->save();
+
+            return redirect('administrator/structure-division')->withStatus('Berhasil menyimpan data');
+        } catch (Exception $e) {
+            return redirect()->back()->withErrors('Terdapat kesalahan', $e);
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect()->back()->withErrors('Terdapat kesalahan', $e);
+        }
     }
 
     /**

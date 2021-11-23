@@ -186,10 +186,12 @@
     <section class="header__profile">
         <div class="container">
         <div class="row">
-            <div class="col-lg-7 py-5">
-            <div class="plyr__video-embed ratio ratio-16x9" id="player">
-                <iframe src="https://www.youtube.com/embed/LNGe4gBhDk8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="col-lg-6 py-5">
+                <div class="plyr__video-embed ratio ratio-16x9" id="player">
+                    <iframe src="https://www.youtube.com/embed/LNGe4gBhDk8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
             </div>
+            <div class="col-lg-1 py-5">
             </div>
             <div class="col-lg-5 py-5 align-self-center">
             <h4 class="mb-4">Video Profile BSO HMJTI </h4>
@@ -217,7 +219,7 @@
             <div class="col-lg-6 col-sm-12">
                 <div class="row g-0 overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                     <div class="col p-4 d-flex flex-column position-static">
-                    <strong class="d-inline-block mb-2">{{ $item->name_category }}</strong>
+                    <strong class="d-inline-block mb-2">{{ $item->category_name }}</strong>
                     <h3 class="mb-0">{{ ucwords($item->title) }}</h3>
                     <div class="mb-1 text-muted" style="font-size: 12px;">{{ $item->author }}| {{ $item->updated_at }}</div>
                     <p class="card-text mb-4 mt-3">

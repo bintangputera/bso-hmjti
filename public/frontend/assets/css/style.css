@@ -255,11 +255,21 @@ p{
 }
 
 /* header profil */
+.header__profil{
+    line-height: 2rem;
+}
 .header__profil h2{
     font-weight: 600;
+    font-size: 24px;
 }
 .header__profil p{
     font-size: 16px;
+}
+.header__profil .test{
+    /* font-size: 900px; */
+    font-size: 16px;
+    color: var(--color-secondary);
+    line-height: 2rem;
 }
 /* // X-Small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap

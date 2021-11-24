@@ -1,7 +1,7 @@
 @extends('layouts.template-front')
 @section('content')
     <div class="banner-image">
-        <img src=" {{ asset('img/content/'.$data_banner->banner) }}" class="img-fluid " alt="">
+        <img src=" {{ asset('img/content/'.$data_banner->banner) }}" class="img-fluid " alt="data blog">
     </div>
     <div class="container-fluid banner ">
         <div class="container text-center">
@@ -25,7 +25,7 @@
             <div class="card">
                 <div class="card-body header__ketua">
                 <div class="d-flex justify-content-center">
-                    <img src=" {{ asset('frontend/assets/images/ketua-wakil.jpg') }}" class="img-fluid mx-auto" width="70%" alt="">
+                    <img src=" {{ asset('frontend/assets/images/ketua-wakil.jpg') }}" class="img-fluid mx-auto" width="70%" alt="data ketua">
                 </div>
 
                 <div class="container">
